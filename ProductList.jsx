@@ -56,10 +56,13 @@ function ProductList() {
   return (
     <div>
       <nav className="navbar">
-        <h2 style={{ cursor: 'pointer' }} onClick={() => setShowCart(false)}>Paradise Nursery</h2>
+        <h2 style={{ cursor: 'pointer' }} onClick={() => window.location.reload()}>Paradise Nursery</h2>
         <div className="nav-links">
           <button onClick={() => setShowCart(false)}>Plants</button>
-          <button onClick={() => setShowCart(true)}>Cart ({totalQuantity})</button>
+          <button onClick={() => setShowCart(true)} style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" id="flat-rectangle" height="30" width="30"><rect width="256" height="256" fill="none"></rect><path d="M184,184H69.8L41.9,34.7A8,8,0,0,0,34.1,28H16" fill="none" stroke="#fff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="16"></path><circle cx="80" cy="204" r="20" fill="none" stroke="#fff" strokeWidth="16"></circle><circle cx="184" cy="204" r="20" fill="none" stroke="#fff" strokeWidth="16"></circle><path d="M62.5,144H188.1a8,8,0,0,0,7.9-6.5l14.4-72A8,8,0,0,0,202.5,56H56.1" fill="none" stroke="#fff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="16"></path></svg>
+            <span>{totalQuantity}</span>
+          </button>
         </div>
       </nav>
 
